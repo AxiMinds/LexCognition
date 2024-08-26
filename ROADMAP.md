@@ -1,7 +1,3 @@
-### **LexCognition Roadmap**
-
----
-
 ### **1. Current Implemented Features**
 
 #### **1.1 Text Analysis**
@@ -25,18 +21,30 @@
 ### **2. Upcoming Features and Tools to be Added**
 
 #### **2.1 Enhanced NLP Capabilities**
+
+   - **Integration of Pattern**:
+     - **Use Case**: Extending the functionality of LexCognition by incorporating advanced NLP, web mining, and machine learning features provided by the Pattern library.
+     - **Link**: [Pattern GitHub Repository](https://github.com/clips/pattern)
+
    - **Integration of TextBlob**:
      - **Use Case**: Simplified NLP tasks such as tokenization, basic sentiment analysis, and language translation.
+     - **Link**: [TextBlob Documentation](https://textblob.readthedocs.io/)
+
    - **Integration of spaCy**:
      - **Use Case**: Advanced NLP tasks including named entity recognition (NER), part-of-speech tagging, and dependency parsing.
+     - **Link**: [spaCy Website](https://spacy.io/)
+
    - **Integration of Flair**:
      - **Use Case**: Sequence labeling with a focus on domain-specific tasks using pre-trained contextual embeddings like BERT or RoBERTa.
+     - **Link**: [Flair GitHub Repository](https://github.com/flairNLP/flair)
+
    - **Integration of Hugging Face Transformers**:
      - **Use Case**: Complex NLP tasks such as text summarization, question answering, and translation using state-of-the-art Transformer models.
+     - **Link**: [Hugging Face Transformers](https://huggingface.co/transformers/)
 
 #### **2.2 Performance and Optimization**
    - **Model Fine-Tuning**:
-     - **Task**: Fine-tuning spaCy, Flair, and Transformer models for specific domains to improve performance and accuracy.
+     - **Task**: Fine-tuning Pattern, spaCy, Flair, and Transformer models for specific domains to improve performance and accuracy.
    - **Benchmarking**:
      - **Task**: Performance monitoring and benchmarking to identify and address bottlenecks in text processing.
 
@@ -64,6 +72,7 @@
 
 ### **3. Tools and Technologies to be Added**
 
+- **Pattern**: https://github.com/clips/pattern
 - **TextBlob**: https://textblob.readthedocs.io/
 - **spaCy**: https://spacy.io/
 - **Flair**: https://github.com/flairNLP/flair
@@ -74,7 +83,7 @@
 ### **4. Timeline**
 
 - **Q4 2024**:
-  - Complete integration of TextBlob and spaCy.
+  - Complete integration of Pattern, TextBlob, and spaCy.
   - Begin testing and fine-tuning Flair models.
 - **Q1 2025**:
   - Integrate Hugging Face Transformers.
@@ -82,3 +91,4 @@
 - **Q2 2025**:
   - Focus on performance optimization and fine-tuning.
   - Launch community-driven contributions for ongoing development.
+
