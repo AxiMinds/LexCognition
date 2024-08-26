@@ -1,0 +1,26 @@
+# Ignore all files in the test_data directory
+test_data/*
+
+# Ignore all files in the reports directory
+reports/*
+
+# Ignore the .env file
+.env
+
+# Optional: Ignore Python bytecode and other common Python project files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Optional: Ignore virtual environment directories
+venv/
+env/
+.venv/
+.env/
+
+# Ignore any temporary or backup files
+*.tmp
+*.bak
+*.swp
+*~

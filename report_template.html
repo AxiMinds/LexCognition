@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Processing Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        h1, h2, h3 { color: #333; }
+        .chunk { margin-bottom: 20px; }
+        .chunk-title { font-weight: bold; }
+        .analysis-result { margin-bottom: 10px; }
+        .explanation { color: #555; font-style: italic; }
+        .score { font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Text Processing Report</h1>
+    <h2>Files Processed</h2>
+    {% for file_result in file_results %}
+        <div class="file-report">
+            <h3>File: {{ file_result.file_name }}</h3>
+
+            {% for chunk_type, chunks in file_result.items() if chunk_type != 'file_name' %}
+                <h4>Chunk Type: {{ chunk_type.replace('_chunks', ' Chunks').capitalize() }}</h4>
+                {% for chunk in chunks %}
+                    <div class="chunk">
+                        <div class="chunk-title">Chunk ID: {{ chunk.chunk_id }}</div>
+                        <div class="chunk-text">Text: <em>{{ chunk.chunk_text }}</em></div>
+                        
+                        <div class="analysis-result">
+                            <strong>LexPrint:</strong>
+                            <div class="score">Average Word Length: {{ chunk.lexprint.avg_word_length }}</div>
+                            <div class="score">Unique Word Ratio: {{ chunk.lexprint.unique_word_ratio }}</div>
+                            <div class="explanation">A higher unique word ratio suggests a more diverse vocabulary.</div>
+                        </div>
+
+                        <div class="analysis-result">
+                            <strong>LexDetect:</strong>
+                            <div class="score">Is Human: {{ chunk.lexdetect.is_human }}</div>
+                            <div class="score">Score: {{ chunk.lexdetect.score }}</div>
+                            <div class="explanation">Scores closer to 1 indicate more human-like text, while lower scores indicate likely generated text.</div>
+                        </div>
+
+                        <div class="analysis-result">
+                            <strong>Signature Analysis:</strong>
+                            <div class="score">Average Word Length: {{ chunk.signature_analysis.avg_word_length }}</div>
+                            <div class="score">Unique Word Ratio: {{ chunk.signature_analysis.unique_word_ratio }}</div>
+                            <div class="score">Word Count: {{ chunk.signature_analysis.word_count }}</div>
+                            <div class="explanation">Signature analysis compares these metrics with a reference text for consistency.</div>
+                        </div>
+
+                        <div class="analysis-result">
+                            <strong>StyleMorph:</strong>
+                            <div class="score">Average Word Length: {{ chunk.style_morph.avg_word_length }}</div>
+                            <div class="score">Word Count Variance: {{ chunk.style_morph.word_count_variance }}</div>
+                            <div class="explanation">StyleMorph analysis helps identify shifts in writing style, which can indicate changes in author or tone.</div>
+                        </div>
+
+                        <div class="analysis-result">
+                            <strong>Visualizations:</strong>
+                            <div><a href="path/to/word_usage_plot">Word Usage Plot</a></div>
+                            <div><a href="path/to/sentence_length_plot">Sentence Length Plot</a></div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    {% endfor %}
+</body>
+</html>
