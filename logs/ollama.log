@@ -1,0 +1,2 @@
+2024-09-07 08:15:18,548 INFO Successfully generated text using model llama2
+2024-09-07 08:15:18,549 ERROR Unexpected error in generate_text: Model invalid_model not found in configuration.

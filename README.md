@@ -2,6 +2,74 @@
 
 ## Overview
 
+LexCognition is a comprehensive AI-based text analysis tool that performs multiple analyses on text files. The system can detect authorship, analyze language complexity, assess vocabulary diversity, perform style morphing, and generate audit reports.
+
+## Features
+
+- Authorship Detection
+- Language Complexity Analysis
+- Vocabulary Diversity Analysis
+- Style Morphing
+- Audit Reporting
+- Sentiment Analysis (Coming Soon)
+- Visualization Tools (Coming Soon)
+
+## Directory Structure
+
+```plaintext
+.
+├── main.py
+├── lexdetect/
+│   └── __init__.py
+├── lexguard/
+│   └── __init__.py
+├── lexprivacy/
+│   └── __init__.py
+├── lexaudit/
+│   └── __init__.py
+├── lexvisualize/
+│   └── __init__.py
+├── tests/
+│   └── test_main.py
+├── README.md
+└── ROADMAP.md# LexCognition
+
+## Overview
+
+LexCognition is a comprehensive AI-based text analysis tool that performs multiple analyses on text files. The system can detect authorship, analyze language complexity, assess vocabulary diversity, perform style morphing, and generate audit reports.
+
+## Features
+
+- Authorship Detection
+- Language Complexity Analysis
+- Vocabulary Diversity Analysis
+- Style Morphing
+- Audit Reporting
+- Sentiment Analysis (Coming Soon)
+- Visualization Tools (Coming Soon)
+
+## Directory Structure
+
+```plaintext
+.
+├── main.py
+├── lexdetect/
+│   └── __init__.py
+├── lexguard/
+│   └── __init__.py
+├── lexprivacy/
+│   └── __init__.py
+├── lexaudit/
+│   └── __init__.py
+├── lexvisualize/
+│   └── __init__.py
+├── tests/
+│   └── test_main.py
+├── README.md
+└── ROADMAP.md# LexCognition
+
+## Overview
+
 LexCognition is a comprehensive AI-based text analysis tool that performs multiple analyses on text files. The system can detect authorship, analyze language complexity, and assess vocabulary diversity. It also provides style-morphed text based on the input and generates detailed audit reports. This tool is useful for analyzing and processing large volumes of text to determine potential AI generation, complexity levels, and other linguistic features.
 
 ## Features
@@ -16,20 +84,21 @@ LexCognition is a comprehensive AI-based text analysis tool that performs multip
 
 ```plaintext
 .
-├── analyze_text.py               # Script for analyzing text
-├── lexaudit                      # Directory containing auditing tools and scripts
-│   ├── audit_report_generation.py  # Script for generating audit reports
-│   ├── change_analysis.py          # Script for analyzing changes
-│   └── __init__.py                 # Init file for the lexaudit module
-├── lexdetect                     # Directory containing authorship detection tools
-├── lexguard                      # Directory for security and privacy tools
-├── lexprivacy                    # Directory for privacy analysis tools
-├── lexcognition_analytics        # Directory containing analytics scripts
-├── process_and_report.py         # Main script to process text files and generate reports
-├── reports                       # Directory where generated reports are stored
-├── requirements.txt              # Python dependencies
-├── test_data                     # Directory containing test text files
-└── README.md                     # This file
+├── main.py
+├── lexdetect/
+│   └── __init__.py
+├── lexguard/
+│   └── __init__.py
+├── lexprivacy/
+│   └── __init__.py
+├── lexaudit/
+│   └── __init__.py
+├── lexvisualize/
+│   └── __init__.py
+├── tests/
+│   └── test_main.py
+├── README.md
+└── ROADMAP.md
 ```
 
 ## Installation
@@ -80,9 +149,46 @@ Audit Report: {'filename': 'test_data/example-file.txt', 'changes': None, 'analy
 
 The audit reports and other analyses are stored in the `reports` directory. Each report is saved as a JSON or plain text file (depending on the analysis), making it easy to review and share results.
 
+## API Documentation
+
+lexdetect
+- detect_text(text: str) -> dict: Determines the likelihood of AI-generated text.
+
+lexguard
+- analyze_signature(text: str) -> dict: Analyzes language complexity and vocabulary diversity.
+
+lexprivacy
+- analyze_style(text: str) -> dict: Assesses word usage variation.
+- morph_style(text: str, target_style: str) -> str: Transforms text into a specified style.
+
+lexaudit
+- generate_audit_report(text: str, metadata: dict) -> dict: Generates a comprehensive audit report.
+
+lexvisualize (Coming Soon)
+- Will provide visualization tools for text analysis results.
+
+Testing
+Run the test suite:
+```shell
+python -m unittest discover tests
+```
 ## Contributing
 
-Contributions are welcome! Please submit a pull request with a detailed description of your changes. Ensure that your code follows the existing style and passes all tests.
+We welcome contributions to LexCognition! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for more information on how to get involved.
+
+## Roadmap
+
+For information about upcoming features and long-term goals, please see our [ROADMAP.md](ROADMAP.md).
+
+## Changelog
+
+### Version 0.1.0
+- Initial release
+- Basic text analysis pipeline
+- Authorship detection
+- Language complexity analysis
+- Vocabulary diversity analysis
+- Basic style morphing
 
 ## License
 

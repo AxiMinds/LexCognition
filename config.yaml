@@ -1,0 +1,20 @@
+# config.yaml
+
+ollama:
+  server: "http://localhost"
+  port: 11434
+  models:
+    - name: "llama2"
+      system_prompt: "You are a helpful AI assistant."
+    - name: "codellama"
+      system_prompt: "You are an AI coding assistant."
+
+openai:
+  api_key: "your_openai_api_key_here"
+  model: "gpt-3.5-turbo"
+
+anthropic:
+  api_key: "your_anthropic_api_key_here"
+  model: "claude-2"
+
+default_model: "llama2"

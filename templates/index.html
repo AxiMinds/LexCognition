@@ -1,0 +1,48 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLP Processor</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1>NLP Processor</h1>
+    <textarea id="text" rows="4" cols="50" placeholder="Enter your text here"></textarea><br>
+    <select id="task">
+        <option value="classification">Text Classification</option>
+        <option value="ner">Named Entity Recognition</option>
+        <option value="sentiment">Sentiment Analysis</option>
+    </select><br>
+    <input type="text" id="categories" placeholder="Categories for classification (comma-separated)"><br>
+    <button onclick="processText()">Process</button>
+    <div id="result"></div>
+
+    <script>
+        function processText() {
+            const text = document.getElementById('text').value;
+            const task = document.getElementById('task').value;
+            const categories = document.getElementById('categories').value.split(',').map(c => c.trim());
+
+            axios.post('/process', {
+                text: text,
+                task: task,
+                categories: categories
+            }, {
+                auth: {
+                    username: 'admin',
+                    password: 'password123'
+                }
+            })
+            .then(function (response) {
+                document.getElementById('result').innerText = JSON.stringify(response.data.result, null, 2);
+            })
+            .catch(function (error) {
+                document.getElementById('result').innerText = 'Error: ' + error.response.data.error;
+            });
+        }
+    </script>
+</body>
+</html>
